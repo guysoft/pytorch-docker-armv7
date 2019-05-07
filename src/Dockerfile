@@ -1,7 +1,5 @@
 FROM arm32v7/ubuntu:18.04
  
-ADD https://github.com/guysoft/pytorch-docker-armv7/raw/master/src/qemu-arm-static /usr/bin
- 
 RUN apt-get update;\
     apt-get install -y libopenblas-dev libblas-dev m4 cmake cython python3-dev python3-yaml python3-setuptools git;
 
