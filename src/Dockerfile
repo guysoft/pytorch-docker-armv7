@@ -1,5 +1,8 @@
 FROM arm32v7/ubuntu:18.04
- 
+COPY bin/ /usr/bin/
+
+RUN [ "cross-build-start" ]
+
 RUN apt-get update;\
     apt-get install -y libopenblas-dev libblas-dev m4 cmake cython python3-dev python3-yaml python3-setuptools git;
 
@@ -19,5 +22,4 @@ ENV NO_QNNPACK=1
 RUN python3 setup.py build
 RUN python3 setup.py install
 
- 
-CMD ["/bin/sh"]
+RUN [ "cross-build-end" ]  
