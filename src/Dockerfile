@@ -4,7 +4,7 @@ COPY bin/ /usr/bin/
 RUN [ "cross-build-start" ]
 
 RUN apt-get update;\
-    apt-get install -y libopenblas-dev libblas-dev m4 cmake cython python3-dev python3-yaml python3-setuptools git;
+    apt-get install -y libopenblas-dev libblas-dev m4 cmake cython python3-dev python3-yaml python3-setuptools git g++ build-essential
 
 RUN mkdir /build
 
